@@ -1,0 +1,41 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aws-cost-explorer-deployment
+  namespace: aws-services
+  labels:
+    app: aws-cost-explorer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aws-cost-explorer
+  template:
+    metadata:
+      labels:
+        app: aws-cost-explorer
+    spec:
+      containers:
+        - name: aws-cost-explorer
+          image: gcavalcanti354/cost-exporter:latest
+          ports:
+            - name: http 
+              containerPort: 9999
+              protocol: TCP
+    
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aws-cost-explorer-svc
+  namespace: aws-services
+spec:
+  ports:
+  - port: 9999
+    protocol: TCP
+    targetPort: 9999
+  selector:
+    app: aws-cost-explorer
+  type: ClusterIP  
