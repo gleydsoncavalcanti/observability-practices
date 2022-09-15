@@ -28,6 +28,6 @@
   
   ``` kubectl create -f aws-cost-explorer.yml ```
   
-  The Metrics will can be visualized after deploy in http://<your-ip>:9999
+  The Metrics will can be visualized after deploy, in http://<your-ip>:9999
   
   ![image](https://user-images.githubusercontent.com/23400555/190505888-b4d946a0-5ed3-4ade-b88b-95d5bd0da7da.png)
