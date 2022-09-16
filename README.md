@@ -1,2 +1,2 @@
-# observability-pratices
+# observability-practices
 
