@@ -44,7 +44,7 @@ def update_metrics():
         
 def start_exporter(): 
     try:
-        start_http_server(8899) 
+        start_http_server(9999) 
         return True 
     except Exception as e: 
         logging.basicConfig(level=ERROR)
